@@ -30,7 +30,18 @@ The application is now runnable using `java -jar target/quarkus-app/quarkus-run.
 If you want to build an _über-jar_, execute the following command:
 
 ```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
+./mvnw package -Dquarkus.package.jar.type=uber-jar 
+```
+
+### Docker Image
+```shell script
+./mvnw package -Dquarkus.container-image.build=true -Dquarkus.package.type=fast-jar -Dquarkus.container-image.tag=jvm
+docker run -i --rm -p 8080:8080 {your_user}/rest-book:jvm
+```
+
+### Building and Running a native on Linux
+```shell
+mvn package -D"quarkus.container-image.build=true" -D"quarkus.package.type=native" -D"quarkus.native.container-build=true" -D"quarkus.container-image.tag=native"
 ```
 
 The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
