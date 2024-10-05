@@ -4,6 +4,12 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Creating a new project from mvn command line
+```shell script
+mvn -U io.quarkus:quarkus-maven-plugin:create -DprojectGroupId=<your-org> -DprojectArtifactId=<project-name> -Dpath="<api-path>" -Dextensions="resteasy-jsonb,container-image-docker"
+mvn -U io.quarkus:quarkus-maven-plugin:create -DprojectGroupId=<your-org> -DprojectArtifactId=<project-name> -Dpath="<api-path>" -Dextensions="resteasy-jsonb,io.quarkus:quarkus-container-image-docker"
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
